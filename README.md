@@ -1,2 +1,2 @@
 # other-smartups-fuw
-APC Smart UPS Firmware Upgrade Wizard mirro
+APC Smart UPS Firmware Upgrade Wizard mirror
