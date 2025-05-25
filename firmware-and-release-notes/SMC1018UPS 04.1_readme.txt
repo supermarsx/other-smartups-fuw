@@ -1,0 +1,90 @@
+﻿Version:
+========
+UPS 04.1
+
+Applicable SKUs:
+================
+ID 1015 and 1018, All standard SKUs beginning with SMT and SMC prefixes and ending with C.
+SMT: SMT750C, SMT750RM2UC, SMT1000C, SMT1000RM2UC, SMT1500C, SMT1500RM2UC, SMT2200C, SMT2200RM2UC, STM3000C, SMT3000RM2UC,
+	 SMT750IC, SMT750RMI2UC	, SMT1000IC, SMT1000RMI2UC, SMT1500IC, SMT1500RMI2UC, SMT2200IC, SMT2200RMI2UC, SMT3000IC, SMT3000RMI2UC
+SMC: SMC1000C, SMC1000RM2UC, SMC1500C, SMC1500RM2UC, SMC1000IC, SMC1000I-2UC, SMC1500I, SMC1500I-2UC
+
+
+Changes between UPS 03.5 and UPS 04.1:
+	1. Improved charging profile for SMT750IC and SMT750RMI2UC.
+	2. Added feature of Modbus over TCP for SMT series.
+	3. Implemented EnergyStar2.0 features to SMT and SMC series.
+	4. Removed output voltage setting for 127V but added 125V setting. 
+	5. Supported a new Modbus 32 bit VoltageACSetting_BF at Modbus memory map address 644.
+
+Bugfixes between UPS 03.5 and UPS 04.1
+	1. Fixed the problem that the upper acceptable limit can't be set to 276V when output voltage setting is 240V. 
+	2. Fixed the problem of two report usages of USB HID on ShutdownImminent and DelayBeforeReboot.
+	3. Fixed that the minimum and maximum limit for reported usages of battery run time and shutdown countdown in an application of Linux, NUT.
+	4. Fixed that unit did not properly show battery temperature in °F below freezing
+	5. Fixed the problem that PCBE USB communication occasionally stopped at Windows 10.
+	6. Fixed the problem that RemainingTimeLimit and AudibleAlarmControl misuse mutually in USB report lufa APC asyncs.
+	7. Fixed the problem that the Battery RBC string sent to cloud containing garbage letters.
+	8. Fixed the problem that once the TCP port 502 was connected by a TCP client, other Modbus master could not connect to that port anymore.
+	9. Fixed the problem that unit did not properly show battery temperature in °F below freezing.
+	10. Fixed the problem that a retransfer point and transfer point at the same point when output voltage is set for 125V and quality is set poor.
+
+
+Previous Released Version(from cloud): UPS 03.5
+Version:
+========
+UPS 03.5
+
+Applicable SKUs:
+================
+ID 1015 and 1018, All standard SKUs beginning with SMT and SMC prefixes.
+SMT: SMT750C, SMT750RM2UC, SMT1000C, SMT1000RM2UC, SMT1500C, SMT1500RM2UC, SMT2200C, SMT2200RM2UC, STM3000C, SMT3000RM2UC
+SMC: SMC1000C, SMC1000RM2UC, SMC1500C, SMC1500RM2UC, SMC1000IC, SMC1000I-2UC, SMC1500I, SMC1500I-2UC
+Change logs:
+	1.	Implement DOE function to improve power efficiency.
+	2.	Improved SmartConnect cloud connectivity and ability to reconnect to the cloud over time 
+	3.	Reporting UPS events (for example: battery disconnected, output on, etc) more accurately to SmartConnect cloud server.
+
+
+Previous Released Version: UPS 03.2
+Version:
+========
+UPS 03.2
+
+Applicable SKUs:
+================
+ID 1015 and 1018, All standard skus beginning with SMT and SMC prefixes.
+SMT: SMT750C, SMT750RM2UC, SMT1000C, SMT1000RM2UC, SMT1500C, SMT1500RM2UC, SMT2200C, SMT2200RM2UC, STM3000C, SMT3000RM2UC
+SMC: SMC1000C, SMC1000RM2UC, SMC1500C, SMC1500RM2UC
+Change logs:
+	1.	Enable boost charger function.
+	2.	Improve the battery over-temperature-protection function.  The UPS will pop-up message on LCD for user to recognize.
+	3.	Added an OEM feature - auto turn on when AC is within range.
+	4.	Allow configuration and acknowledgement of Site Wiring Fault.
+	5.	Added an event reporting to could when Outlet status changes.
+	6.	Fixed reversed setting in Modbus configuration. 
+	7.	Improved a status reporting to cloud related with pending off for UPS.
+	8.	LCD Display of runtime remaining when runtime less than one minute will report “< 1m”
+	9.	Change default choice for confirming installation of firmware now (output on) to CONFIRMED, not CANCEL.
+
+
+Initial Released Version: UPS 02.6
+Version:
+========
+UPS 02.6
+Applicable SKUs:
+================
+SMT: SMT750C, SMT750RM2UC
+
+
+Compatibility:
+==============
+AP9613 Dry Contact Version Next Gen Relay IO card 2.1
+AP9620 LCC Version 3.0
+AP9624 (Second Gen Interface Expander Card) v1.0X
+AP9631/AP9630 card APP SUMX 6.2.1, AOS 6.2.1
+AP9635 CH / AP9631card APP SUMX 6.4.6, AOS 6.4.6
+AP9635 CH card APP SUMX 6.4.0, AOS 6.4.0
+PowerChute Business Edition v9.2
+FUW (Firmware Upgrade Wizard) Tool v4.1.1
+
